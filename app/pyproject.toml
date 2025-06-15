@@ -10,7 +10,8 @@ requires-python = ">=3.12"
 dependencies = [
     "slack-bolt (>=1.23.0,<2.0.0)",
     "slack-sdk (>=3.35.0,<4.0.0)",
-    "boto3 (>=1.38.36,<2.0.0)"
+    "boto3 (>=1.38.36,<2.0.0)",
+    "pytest (>=8.4.0,<9.0.0)"
 ]
 
 [tool.poetry]
@@ -23,3 +24,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry-plugin-lambda-build]
 function-artifact-path = "package.zip"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests",]
